@@ -1,5 +1,7 @@
 # RTMQ ReadMe——IIIS
 
+!!! reference
+   [安装视频及简单使用教程](https://cloud.tsinghua.edu.cn/d/708864f7fd554fc8bd6a/)
 ## 硬件连接
 
 插上电源，连接机箱，将USB插到电脑上
