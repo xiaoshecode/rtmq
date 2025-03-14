@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>http://tiqc.asuscomm.com:8000/</loc>
-         <lastmod>2025-02-13</lastmod>
+         <loc>https://xiaoshecode.github.io/rtmq/Homepage/</loc>
+         <lastmod>2025-03-14</lastmod>
+    </url>
+    <url>
+         <loc>https://xiaoshecode.github.io/rtmq/RTMQ%20%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/</loc>
+         <lastmod>2025-03-14</lastmod>
+    </url>
+    <url>
+         <loc>https://xiaoshecode.github.io/rtmq/%E8%B0%83%E8%AF%95%E6%96%87%E6%A1%A3/</loc>
+         <lastmod>2025-03-14</lastmod>
     </url>
 </urlset>

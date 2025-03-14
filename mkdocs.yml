@@ -1,4 +1,50 @@
-site_name: RTMQ README
+site_name: RTMQ README for TIQC
+site_description: RTMQ README for TIQC
+site_author: xiaoshe
 site_url: https://xiaoshecode.github.io/rtmq/
+nav:
+    - Homepage: Homepage.md
+    # - Tutorial:
+    - Install: Install.md
+    - Tutorial: RTMQ_Tutorial.md
+    - config: config.md
+    - Debug log: Debug_log.md
+    # - About: about.md
+    # - Test: test.md
+    
 theme: 
   name: material
+  language: zh
+  features:
+    - navigation.instant # 即时加载
+    - navigation.tracking # 瞄点跟踪
+    # - navigation.tabs # 导航选型卡
+    - navigation.tabs.sticky  #粘性导航选项卡
+    - navigation.sections  #次级目录在侧边栏中呈现为组，与tabs同存则有2级导航
+    - navigation.top  #返回顶端
+    - search.suggest # 搜索建议
+    - search.highlight # 搜索高亮
+    - search.share # 搜索分享
+    - header.autohide # 自动隐藏标题
+  palette: #切换黑白模式
+    - media: "(prefers-color-scheme: light)" 
+      scheme: default  #配色方案：浅色模式
+      primary: indigo  #原色，默认蓝，用于标题、侧边栏、文本链接和其他几个组件
+      accent: indigo  #强调色，默认蓝，可以交互的元素如悬停链接、按钮和滚动条
+      toggle:
+        icon: material/weather-sunny #图标，太阳
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"  
+      scheme: slate  #配色方案：深色模式
+      toggle:
+        icon: material/weather-night  #图标，月亮
+        name: Switch to light mode
+
+markdown_extensions:
+    - abbr # 缩写
+    - admonition # 警告或标注
+    - pymdownx.details # 细节折叠
+    - pymdownx.superfences # 代码块增强
+    - pymdownx.highlight # 代码高亮
+    - attr_list
+
