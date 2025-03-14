@@ -8,6 +8,7 @@ nav:
     - Install: Install.md
     - Tutorial: RTMQ_Tutorial.md
     - config: config.md
+    - Device: Device.md
     - Debug log: Debug_log.md
     # - About: about.md
     # - Test: test.md
