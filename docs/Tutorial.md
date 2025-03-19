@@ -8,11 +8,13 @@
 !!! note
     等待浏览器打开jupyter lab界面。如果终端有输出"Exp.ipynb - idle"即为开启成功。最小化终端弹窗和浏览器弹窗，不要关闭。
 
-4. 在VScode中打开Exp.ipynb 
+4. 在VScode中打开实验jupyter文件（Exp.ipynb） 
 !!!内核选择
     选择其他内核-现有jupyter服务器-localhost-Python 3 (ipykernel)(py/Exp.ipynb) 
 
-1. 运行`py/Exp.ipynb`中的代码，开始进行实验
+5. 运行`py/Exp.ipynb`中的代码，开始进行实验
+   !!! quote ""
+    406 xyz学姐的台子是在'Main/XYZ.ipynb'中的，不是在Exp.ipynb中的，内核选择也是Main/XYZ.ipynb的内核。
 
 ## 2.代码逻辑介绍
 !!! quote ""

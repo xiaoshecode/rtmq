@@ -6,7 +6,7 @@ nav:
     # - 'Homepage.md'
     # - Tutorial:
     - Install: Install.md
-    - Tutorial: RTMQ_Tutorial.md
+    - Tutorial: Tutorial.md
     - config: config.md
     - Device: Device.md
     - Debug log: Debug_log.md
