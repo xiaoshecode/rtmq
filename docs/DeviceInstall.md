@@ -22,16 +22,16 @@
 
 ## MQTT Configuration
 
-根本平台的配置修改 `MQTT.py`， line 9-16
+根本平台的配置修改 `libs/MQTT.py`， line 9-16
 
 ```python
 if True:
-    broker = '192.168.50.27'
+    broker = '192.168.50.27' #修改为设备所连电脑的ip地址
     port = 1883
     username = 'streamsheets'
     password = 'vgI8g1z2Ya'
     JUPYTER = 'http://localhost:8888'
-    WS = f'"ws://{broker}:8083/mqtt",'+'{'+f'username:"{username}",password:"{password}"'+'}'
+    WS = f'"ws://{broker}:8083/mqtt",'+'{'+f'username:"{username}",password:"{password}"'+'}' 
     WEB = "http://localhost"
 ```
 
@@ -43,7 +43,7 @@ if True:
 
 `config.json` 规定了程序和`topic`之间的对应关系。
 
-的文件结构为：
+它的文件结构为：
 
 ```json
 {
@@ -57,7 +57,8 @@ if True:
 ```json
 {
     "Device": "./Device.py",
-    "CMOS": "./run/CMOS.py"    
+    "CMOS": "./run/CMOS.py",
+    "CCD": "./run/CCD.py",    
 }
 ```
 
@@ -65,17 +66,18 @@ if True:
 
 ### 文件位置
 
-1.  对于在该电脑上运行的程序(除了 Device.py 外)请放在`./run`目录下（该目录需要自行创建）
+1. 对于在该电脑上运行的程序(除了 Device.py 外)请放在`./run`目录下作为正在运行设备的集合（该目录需要自行创建）
 
 2. 相关的库文件请放在 `./libs`(注意库文件的通用性，如是设备specific,请放在`./run`)
 
 3. `./repo`中放了已经开发好的程序，可以按需复制到`./run`中，配置使用
 
-   
 
-## Web  Configuration
+## 前端 Configuration
 
-web相关的项目请参考：https://gitlab.hyqubit.com/trappedionsoftware/DeviceWeb
+1. web相关的项目请参考：https://gitlab.hyqubit.com/trappedionsoftware/DeviceWeb
+目前希望能整合在Device库中方便协同使用。
+
 
 # Run
 

@@ -13,7 +13,7 @@
     选择其他内核-现有jupyter服务器-localhost-Python 3 (ipykernel)(py/Exp.ipynb) 
 
 5. 运行`py/Exp.ipynb`中的代码，开始进行实验
-   !!! quote ""
+!!! quote ""
     406 xyz学姐的台子是在'Main/XYZ.ipynb'中的，不是在Exp.ipynb中的，内核选择也是Main/XYZ.ipynb的内核。
 
 ## 2.代码逻辑介绍

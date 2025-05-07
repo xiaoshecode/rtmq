@@ -3,15 +3,19 @@ site_description: RTMQ README for TIQC
 site_author: xiaoshe
 site_url: https://xiaoshecode.github.io/rtmq/
 nav:
-    # - 'Homepage.md'
-    # - Tutorial:
-    - Install: Install.md
-    - Tutorial: Tutorial.md
-    - config: config.md
-    - Device: Device.md
-    - Debug log: Debug_log.md
+    - Home: index.md
+    - Install: 
+      - SeqInstall: SeqInstall.md
+      - DeviceInstall: DeviceInstall.md
+    - Tutorial:
+      - SeqTutorial: SeqTutorial.md
+      - DeviceTutorial: DeviceTutorial.md
+    - Config: 
+      - SeqConfig: SeqConfig.md
+      - DeviceConfig: DeviceConfig.md
+    - DebugLog: DebugLog.md
     # - About: about.md
-    # - Test: test.md
+    - Test: test.md
     
 theme: 
   name: material
@@ -21,7 +25,8 @@ theme:
     - navigation.tracking # 瞄点跟踪
     # - navigation.tabs # 导航选型卡
     - navigation.tabs.sticky  #粘性导航选项卡
-    - navigation.sections  #次级目录在侧边栏中呈现为组，与tabs同存则有2级导航
+    # - navigation.sections  #次级目录在侧边栏中呈现为组，与tabs同存则有2级导航
+    - navigation.expand #左侧边栏全展开
     - navigation.top  #返回顶端
     - search.suggest # 搜索建议
     - search.highlight # 搜索高亮
