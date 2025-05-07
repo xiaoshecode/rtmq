@@ -97,7 +97,7 @@ if True:
 
 ## Device Management
 
-对设备的管理主要为 start, kill, restart，这些可以通过如下接口实现。一下以设备 Toptica 为例
+对设备的管理主要为 start, kill, restart，这些可以通过如下接口实现。以下以设备 Toptica 为例
 
 ```python
 import MQTT
