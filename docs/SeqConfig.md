@@ -114,5 +114,8 @@ data,datafile = sequencer.scan(Seq(Wave).Detection(1000,1).Wait(sym.t),sym.t,(20
 参数说明：
 func：需要进行扫描的参数，如果是对时间(sym.t)进行扫描，是整个整数n，表示对是时序中第n个位置的时间进行扫描（从0开始计数）。如果是其他参数，如`Cooling.s0.f`则表示对这个频率进行扫描
 
+??? cite
+    这里的func是一个函数，不能直接传入数字，必须是一个函数。对于时间扫描时，传入`sym.a，sym.b`之类的也可。`sym`是一套符号表达式系统，用来模拟Mathematica，属于是历史包袱。
+
 rng:range, 三个参数分别是 start, stop, step
 stat：同Sweep：计数相同
