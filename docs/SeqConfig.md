@@ -119,3 +119,34 @@ func：需要进行扫描的参数，如果是对时间(sym.t)进行扫描，是
 
 rng:range, 三个参数分别是 start, stop, step
 stat：同Sweep：计数相同
+
+#### 4.3.3 高维多参数线性扫描
+
+- 第一种方法
+```python
+amp = np.linspace(0.1,0.5,10)
+Set(sym.f,None)
+Set(sym.a,None)
+DDS.Cooling.scan = DDS.Cooling().f[1](sym.f).a[1](sym.a) #define profile 
+Wave.ddstest = Wave().dds[0](**DDS.Dict(DDS.LAOD.on,DDS.Pumping.on,DDS.Cooling.scan)).ttl[0]([2,15]).dds[1](**DDS.Dict(DDS.LAOD.sq,DDS.Pumping.on)).ttl[1]([2])
+seq = Seq(Wave).ddstest(100,50)
+
+def change_amp(val=None):
+    if val is None: # reset 变量回到原点
+        Set(sym.f,None)
+        Set(sym.a,None)
+        return
+    Set(sym.f,-30+val)
+    Set(sym.a,amp[int(val)])
+    return val
+
+sequencer.scan(seq,change_amp,(0,9,1),repeats=2,plt=False)
+```
+
+- 第二种方法
+```python
+amp = [0.01,0.02,0.05]
+for i in range(3):
+   DDS.Cooling.on.f[1](-30+i).a[1](amp[i]).f[2](0).a[2](0)  #614
+   print(Exp.Run(Seq(Wave).ddstest(500,500),repeats=10))
+```
