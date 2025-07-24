@@ -24,3 +24,8 @@
 
 1. 修复了`config.ipynb`修改后不能正常加载的错误
 2. 删除了关于`config.db`的相关操作，现在不通过`config.db`来加载配置而是直接在`Exp.ipynb`中加载`config.py`中的配置
+
+### 210-hyyRTMQdebug记录-20250724
+
+1. 时间序列单时间段最长可以达到13.33秒
+2. 扫描参数中的`sym.t`可能会出问题，需要进行手动设置为`None`：`Set(sym.t, None)`

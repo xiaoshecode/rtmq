@@ -86,3 +86,9 @@ Log日志系统是用来记录实验数据和实验操作执行的`Jupyter cell`
 
 ??? cite "图 1：Log 日志系统目录"
     ![Log日志系统](figure/Log日志系统目录.png)
+
+### 2.5 数据处理
+
+数据处理可以通过`import Fit`来导入提供的`Fit.py`文件，这个文件中提供了如数据拟合等拟合工具包。
+如`rabi drive`频率，`peaks`寻峰等函数都有
+

@@ -4,7 +4,7 @@
 
 这个仓库用来RTMQ调试和使用的文档
 
-[软件云盘共享链接](https://cloud.tsinghua.edu.cn/d/0f2bbf86cec247ca9621/)
+[软件云盘共享链接](https://cloud.tsinghua.edu.cn/d/ea07eaf28151449186f4/)
 密码请联系 xiaoshe
 
 - [`Seq`使用说明](SeqTutorial.md)
