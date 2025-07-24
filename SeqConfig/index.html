@@ -1,0 +1,1101 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="RTMQ README for TIQC">
+      
+      
+        <meta name="author" content="xiaoshe">
+      
+      
+        <link rel="canonical" href="https://xiaoshecode.github.io/rtmq/SeqConfig/">
+      
+      
+        <link rel="prev" href="../DeviceTutorial/">
+      
+      
+        <link rel="next" href="../DeviceConfig/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>SeqConfig - RTMQ README for TIQC</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#config-readme" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="RTMQ README for TIQC" class="md-header__button md-logo" aria-label="RTMQ README for TIQC" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            RTMQ README for TIQC
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              SeqConfig
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/xiaoshecode/rtmq.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    TIQC/RTMQReadme
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="RTMQ README for TIQC" class="md-nav__button md-logo" aria-label="RTMQ README for TIQC" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    RTMQ README for TIQC
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/xiaoshecode/rtmq.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    TIQC/RTMQReadme
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Install
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Install
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SeqInstall/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SeqInstall
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DeviceInstall/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DeviceInstall
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tutorial
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorial
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SeqTutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SeqTutorial
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DeviceTutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DeviceTutorial
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Config
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Config
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    SeqConfig
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    SeqConfig
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 板卡通道映射关系
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-dds" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. DDS
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. DDS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 单音模式 &amp;&amp; 多音模式
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-plusettl" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. pluse(TTL)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-sequence" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Sequence
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Sequence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 时序基本单元定义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 探测时序基本单元定义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3. 时序的运行模式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.3. 时序的运行模式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#431-sweep" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3.1 Sweep
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#432-scan" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3.2 Scan
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#433" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3.3 高维多参数线性扫描
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DeviceConfig/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DeviceConfig
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DebugLog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DebugLog
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Test
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 板卡通道映射关系
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-dds" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. DDS
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. DDS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 单音模式 &amp;&amp; 多音模式
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-plusettl" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. pluse(TTL)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-sequence" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Sequence
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Sequence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 时序基本单元定义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 探测时序基本单元定义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3. 时序的运行模式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.3. 时序的运行模式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#431-sweep" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3.1 Sweep
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#432-scan" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3.2 Scan
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#433" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3.3 高维多参数线性扫描
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="config-readme">Config README</h1>
+<h2 id="1">1. 板卡通道映射关系</h2>
+<p>通过板卡通道的编号和配置文件名字来确定，如下的程序将名称为 Pumping， Cooling等DDS通道分别映射到数组内方便程序调用。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>rwg_slot: 使用的板卡编号。板卡编号与板卡在机箱中的位置一致，从左至右依次为[1，2，3，4，0，5，6，7]</p>
+</div>
+<p><code>pos=0</code>表示板卡按照rwg_slot的顺序从左至右依次编号，第0个输出通道。
+<div class="highlight"><pre><span></span><code><span class="n">Global411</span> <span class="o">=</span> <span class="n">DDS</span><span class="o">.</span><span class="n">Global411</span> <span class="o">=</span> <span class="n">DDS</span><span class="p">(</span><span class="n">pos</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">f</span><span class="p">[</span><span class="mi">0</span><span class="p">](</span><span class="mi">135</span><span class="p">)</span><span class="o">.</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">](</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">Global411</span><span class="o">.</span><span class="n">on</span> <span class="o">=</span> <span class="n">Global411</span><span class="p">()</span><span class="o">.</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">](</span><span class="mf">0.64</span><span class="p">)</span>
+<span class="n">Global411</span><span class="o">.</span><span class="n">off</span> <span class="o">=</span> <span class="n">Global411</span><span class="p">()</span><span class="o">.</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">](</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="p">](</span><span class="mi">60</span><span class="p">)</span>  <span class="c1"># .a[2](0).a[3](0).a[4](0)</span>
+<span class="n">Global411</span><span class="o">.</span><span class="n">rsblow</span> <span class="o">=</span> <span class="n">Global411</span><span class="p">()</span><span class="o">.</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">](</span><span class="mf">0.4</span><span class="p">)</span>
+<span class="n">Global411</span><span class="o">.</span><span class="n">rsbhigh</span> <span class="o">=</span> <span class="n">Global411</span><span class="p">()</span><span class="o">.</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">](</span><span class="mf">0.4</span><span class="p">)</span>
+<span class="n">Global411</span><span class="o">.</span><span class="n">bsblow</span> <span class="o">=</span> <span class="n">Global411</span><span class="p">()</span><span class="o">.</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">](</span><span class="mf">0.4</span><span class="p">)</span>
+<span class="n">Global411</span><span class="o">.</span><span class="n">bsbhigh</span> <span class="o">=</span> <span class="n">Global411</span><span class="p">()</span><span class="o">.</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">](</span><span class="mf">0.4</span><span class="p">)</span>
+<span class="n">Global411</span><span class="o">.</span><span class="n">shelf0</span> <span class="o">=</span> <span class="n">Global411</span><span class="p">()</span><span class="o">.</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">](</span><span class="mf">0.64</span><span class="p">)</span>
+<span class="n">Global411</span><span class="o">.</span><span class="n">shelf1</span> <span class="o">=</span> <span class="n">Global411</span><span class="p">()</span><span class="o">.</span><span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="p">](</span><span class="o">-</span><span class="mf">8.54</span><span class="p">)</span><span class="o">.</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">](</span><span class="mf">0.64</span><span class="p">)</span>
+<span class="n">Global411</span><span class="o">.</span><span class="n">shelf2</span> <span class="o">=</span> <span class="n">Global411</span><span class="p">()</span><span class="o">.</span><span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="p">](</span><span class="mf">9.11</span><span class="p">)</span><span class="o">.</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">](</span><span class="mf">0.64</span><span class="p">)</span>
+<span class="n">Global411</span><span class="o">.</span><span class="n">test</span> <span class="o">=</span> <span class="n">Global411</span><span class="p">()</span><span class="o">.</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">](</span><span class="mf">0.54</span><span class="p">)</span>
+</code></pre></div></p>
+<h2 id="2-dds">2. DDS</h2>
+<h3 id="21">2.1 单音模式 &amp;&amp; 多音模式</h3>
+<p>定义DDS，DDS接口的一个频率输出有三个可调的参数f,a,p(默认为0)。多音模式即一个通道可以同时输出多个频率的叠加，比较常用的是2个频率，在程序中定义如下：</p>
+<div class="highlight"><pre><span></span><code><span class="n">LAOD</span> <span class="o">=</span> <span class="n">DDS</span><span class="o">.</span><span class="n">LAOD</span> <span class="o">=</span> <span class="n">DDS</span><span class="p">(</span><span class="n">pos</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">f</span><span class="p">[</span><span class="mi">0</span><span class="p">](</span><span class="mf">170.0</span><span class="p">)</span><span class="o">.</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">](</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">LAOD</span><span class="o">.</span><span class="n">on</span> <span class="o">=</span> <span class="n">LAOD</span><span class="p">()</span><span class="o">.</span><span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="p">](</span><span class="mf">0.3</span><span class="p">)</span><span class="o">.</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">](</span><span class="mf">0.35</span><span class="p">)</span><span class="o">.</span><span class="n">f</span><span class="p">[</span><span class="mi">2</span><span class="p">](</span><span class="o">-</span><span class="mf">0.3</span><span class="p">)</span><span class="o">.</span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">](</span><span class="mf">0.35</span><span class="p">)</span>
+<span class="n">LAOD</span><span class="o">.</span><span class="n">off</span> <span class="o">=</span> <span class="n">LAOD</span><span class="p">()</span><span class="o">.</span><span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="p">](</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">](</span><span class="mf">0.35</span><span class="p">)</span><span class="o">.</span><span class="n">f</span><span class="p">[</span><span class="mi">2</span><span class="p">](</span><span class="mf">0.3</span><span class="p">)</span><span class="o">.</span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">](</span><span class="mf">0.35</span><span class="p">)</span>
+</code></pre></div>
+<p>这里定义了一个名为LAOD的DDS，它对应的物理板卡是pos=1，代表是第一个板卡上的第一个通道。
+它的基频是170.0MHz，幅度是1，on状态下同时输出两个频率，分别是170+0.3和170-0.3MHz，幅度都是0.35。off状态下两个频率分别是170-1和170+1MHz，幅度都是0.35。</p>
+<h2 id="3-plusettl">3. pluse(TTL)</h2>
+<p>类似于DDS，定义好名字和板卡连接即可。TTL只有打开和关闭两种状态，较dds设置简单。</p>
+<p><div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">TTL</span><span class="p">:</span>
+    <span class="n">Pumping</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">EOM3432</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">Cooling</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">CCD</span> <span class="o">=</span> <span class="mi">4</span>
+    <span class="n">PMT</span> <span class="o">=</span> <span class="mi">15</span>
+</code></pre></div>
+这里定义的TTL类，将TTL编号与名字对应起来，方便程序调用，当然也可以直接调用编号，具体调用方法下面sequence说明里面给出示例。</p>
+<h2 id="4-sequence">4. Sequence</h2>
+<h3 id="41">4.1 时序基本单元定义</h3>
+<p>我们将一组DDS输出和TTL信号的组合称为最小时序，其格式定义如下：</p>
+<div class="highlight"><pre><span></span><code><span class="n">Wave</span><span class="o">.</span><span class="n">Count</span> <span class="o">=</span> <span class="n">Wave</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">dds</span><span class="p">[</span><span class="mi">0</span><span class="p">](</span><span class="o">**</span><span class="n">DDS</span><span class="o">.</span><span class="n">Dict</span><span class="p">(</span><span class="n">Cooling</span><span class="o">.</span><span class="n">on</span><span class="p">,</span>  <span class="n">AOM976</span><span class="o">.</span><span class="n">on</span><span class="p">,</span> <span class="n">AOM3432</span><span class="o">.</span><span class="n">on</span><span class="p">,</span> <span class="n">LAOM411</span><span class="o">.</span><span class="n">on</span><span class="p">,</span> <span class="n">RAOM411</span><span class="o">.</span><span class="n">on</span><span class="p">))</span>
+    <span class="o">.</span><span class="n">ttl</span><span class="p">[</span><span class="mi">0</span><span class="p">]([</span><span class="n">TTL</span><span class="o">.</span><span class="n">Cooling</span><span class="p">,</span><span class="n">TTL</span><span class="o">.</span><span class="n">PMT</span><span class="p">])</span><span class="o">.</span><span class="n">ttl</span><span class="p">[</span><span class="mi">1</span><span class="p">]([</span><span class="n">TTL</span><span class="o">.</span><span class="n">Cooling</span><span class="p">])</span>
+<span class="n">Wave</span><span class="o">.</span><span class="n">Cooling</span> <span class="o">=</span> <span class="n">Wave</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">dds</span><span class="p">[</span><span class="mi">0</span><span class="p">](</span><span class="o">**</span><span class="n">DDS</span><span class="o">.</span><span class="n">Dict</span><span class="p">(</span><span class="n">Cooling</span><span class="o">.</span><span class="n">on</span><span class="p">,</span>  <span class="n">AOM976</span><span class="o">.</span><span class="n">on</span><span class="p">,</span> <span class="n">AOM3432</span><span class="o">.</span><span class="n">on</span><span class="p">,</span> <span class="n">LAOM411</span><span class="o">.</span><span class="n">on</span><span class="p">,</span><span class="n">RAOM411on</span><span class="p">))</span>
+<span class="n">Wave</span><span class="o">.</span><span class="n">CoolingC</span> <span class="o">=</span> <span class="n">Wave</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">dds</span><span class="p">[</span><span class="mi">0</span><span class="p">](</span><span class="o">**</span><span class="n">DDS</span><span class="o">.</span><span class="n">Dict</span><span class="p">(</span><span class="n">Cooling</span><span class="o">.</span><span class="n">on</span><span class="p">,</span>  <span class="n">AOM976</span><span class="o">.</span><span class="n">on</span><span class="p">,</span> <span class="n">AOM3432</span><span class="o">.</span><span class="n">on</span><span class="p">))</span>
+    <span class="o">.</span><span class="n">ttl</span><span class="p">[</span><span class="mi">0</span><span class="p">]([</span><span class="mi">15</span><span class="p">])</span><span class="o">.</span><span class="n">dds</span><span class="p">[</span><span class="mi">1</span><span class="p">](</span><span class="o">**</span><span class="n">DDS</span><span class="o">.</span><span class="n">Dict</span><span class="p">(</span><span class="n">Cooling</span><span class="o">.</span><span class="n">on</span><span class="p">,</span>  <span class="n">AOM976</span><span class="o">.</span><span class="n">on</span><span class="p">,</span> <span class="n">AOM3432</span><span class="o">.</span><span class="n">on</span><span class="p">))</span>
+</code></pre></div>
+<p>以Wave.Count为例，定义了一个名为Count的时序，其中dds[0]表示第一段时序单元中使用的DDS通道，后面的参数是一个字典，表示这个时序单元开启的DDS状态，ttl[0]表示第一个TTL时序单元中开启的TTL通道，后面的参数是一个列表，表示使用的TTL。同理可以定义出第二段DDS和TTL的时序单元。</p>
+<h3 id="42">4.2 探测时序基本单元定义</h3>
+<p><div class="highlight"><pre><span></span><code><span class="n">Wave</span><span class="o">.</span><span class="n">Detection</span> <span class="o">=</span> <span class="n">Wave</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">dds</span><span class="p">[</span><span class="mi">0</span><span class="p">](</span><span class="o">**</span><span class="n">DDS</span><span class="o">.</span><span class="n">Dict</span><span class="p">(</span><span class="n">Pumping</span><span class="o">.</span><span class="n">detection</span><span class="p">,</span><span class="n">AOM976</span><span class="o">.</span><span class="n">on</span><span class="p">))</span>
+    <span class="o">.</span><span class="n">ttl</span><span class="p">[</span><span class="mi">0</span><span class="p">]([</span><span class="mi">2</span><span class="p">,</span><span class="n">TTL</span><span class="o">.</span><span class="n">PMT</span><span class="p">])</span><span class="o">.</span><span class="n">dds</span><span class="p">[</span><span class="mi">1</span><span class="p">](</span><span class="o">**</span><span class="n">DDS</span><span class="o">.</span><span class="n">Dict</span><span class="p">(</span><span class="n">AOM976</span><span class="o">.</span><span class="n">on</span><span class="p">))</span>
+    <span class="o">.</span><span class="n">ttl</span><span class="p">[</span><span class="mi">1</span><span class="p">]([</span><span class="mi">2</span><span class="p">])</span>
+</code></pre></div>
+一般在Detection序列中会使用两段时序单元，第一段是探测信号，第二段是探测完毕后的状态，其余的时序单元基本只有一段。</p>
+<h3 id="43">4.3. 时序的运行模式</h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>这里的运行模式是指在实验中如何运行时序，如何进行扫描等。
+参考<code>data.py</code>中的代码，可以看到具体的运行模式。
+<div class="highlight"><pre><span></span><code><span class="n">CCD_TH</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="n">CCD_TH</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="n">PMT_TH</span> <span class="o">=</span> <span class="mf">1.5</span>
+<span class="n">INIT_TH</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">C0</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span> <span class="k">return</span> <span class="n">arr</span>  <span class="c1"># arr.sum(1)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">S0</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span> <span class="k">return</span> <span class="n">arr</span> <span class="o">&gt;</span> <span class="n">PMT_TH</span>  <span class="c1"># arr.sum(1)&gt;1</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">P0</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span> <span class="k">return</span> <span class="n">arr</span> <span class="o">&lt;=</span> <span class="n">PMT_TH</span>  <span class="c1"># arr.sum(1)&lt;=1</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">C1</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span> <span class="k">return</span> <span class="n">arr</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">S1</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span> <span class="k">return</span> <span class="n">arr</span> <span class="o">&gt;</span> <span class="n">CCD_TH</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">SC</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span> <span class="k">return</span> <span class="n">arr</span><span class="p">[</span><span class="n">arr</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">&gt;</span><span class="n">INIT_TH</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">&gt;</span><span class="n">PMT_TH</span>
+</code></pre></div></p>
+</div>
+<h4 id="431-sweep">4.3.1 Sweep</h4>
+<p>反复运行同一段时序，直到手动结束</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># sweep mode：sweep(self, seq, stat=None, repeats=100, res=None)</span>
+<span class="n">sequencer</span><span class="o">.</span><span class="n">sweep</span><span class="p">(</span><span class="n">seq</span><span class="p">,</span> <span class="s2">&quot;C0&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="432-scan">4.3.2 Scan</h4>
+<p>对系统中一个维度的参数（如时间、频率、相位、幅度等）进行扫描，得到一组以扫描参数为自变量的结果</p>
+<p><div class="highlight"><pre><span></span><code><span class="n">data</span><span class="p">,</span><span class="n">datafile</span> <span class="o">=</span> <span class="n">sequencer</span><span class="o">.</span><span class="n">scan</span><span class="p">(</span><span class="n">Seq</span><span class="p">(</span><span class="n">Wave</span><span class="p">)</span><span class="o">.</span><span class="n">Detection</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">Wait</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">t</span><span class="p">),</span><span class="n">sym</span><span class="o">.</span><span class="n">t</span><span class="p">,(</span><span class="mi">2000</span><span class="p">,</span><span class="mi">3000</span><span class="p">,</span><span class="mi">50</span><span class="p">))</span>
+<span class="c1"># scan(self, seq, func, rng, stat=None, repeats=100, prefix=&#39;&#39;, res=None, plt=True):</span>
+</code></pre></div>
+参数说明：
+func：需要进行扫描的参数，如果是对时间(sym.t)进行扫描，是整个整数n，表示对是时序中第n个位置的时间进行扫描（从0开始计数）。如果是其他参数，如<code>Cooling.s0.f</code>则表示对这个频率进行扫描</p>
+<details class="cite">
+<summary>Cite</summary>
+<p>这里的func是一个函数，不能直接传入数字，必须是一个函数。对于时间扫描时，传入<code>sym.a，sym.b</code>之类的也可。<code>sym</code>是一套符号表达式系统，用来模拟Mathematica，属于是历史包袱。</p>
+</details>
+<p>rng:range, 三个参数分别是 start, stop, step
+stat：同Sweep：计数相同</p>
+<h4 id="433">4.3.3 高维多参数线性扫描</h4>
+<ul>
+<li>
+<p>第一种方法
+<div class="highlight"><pre><span></span><code><span class="n">amp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">Set</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">f</span><span class="p">,</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">Set</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">a</span><span class="p">,</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">DDS</span><span class="o">.</span><span class="n">Cooling</span><span class="o">.</span><span class="n">scan</span> <span class="o">=</span> <span class="n">DDS</span><span class="o">.</span><span class="n">Cooling</span><span class="p">()</span><span class="o">.</span><span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="p">](</span><span class="n">sym</span><span class="o">.</span><span class="n">f</span><span class="p">)</span><span class="o">.</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">](</span><span class="n">sym</span><span class="o">.</span><span class="n">a</span><span class="p">)</span> <span class="c1">#define profile </span>
+<span class="n">Wave</span><span class="o">.</span><span class="n">ddstest</span> <span class="o">=</span> <span class="n">Wave</span><span class="p">()</span><span class="o">.</span><span class="n">dds</span><span class="p">[</span><span class="mi">0</span><span class="p">](</span><span class="o">**</span><span class="n">DDS</span><span class="o">.</span><span class="n">Dict</span><span class="p">(</span><span class="n">DDS</span><span class="o">.</span><span class="n">LAOD</span><span class="o">.</span><span class="n">on</span><span class="p">,</span><span class="n">DDS</span><span class="o">.</span><span class="n">Pumping</span><span class="o">.</span><span class="n">on</span><span class="p">,</span><span class="n">DDS</span><span class="o">.</span><span class="n">Cooling</span><span class="o">.</span><span class="n">scan</span><span class="p">))</span><span class="o">.</span><span class="n">ttl</span><span class="p">[</span><span class="mi">0</span><span class="p">]([</span><span class="mi">2</span><span class="p">,</span><span class="mi">15</span><span class="p">])</span><span class="o">.</span><span class="n">dds</span><span class="p">[</span><span class="mi">1</span><span class="p">](</span><span class="o">**</span><span class="n">DDS</span><span class="o">.</span><span class="n">Dict</span><span class="p">(</span><span class="n">DDS</span><span class="o">.</span><span class="n">LAOD</span><span class="o">.</span><span class="n">sq</span><span class="p">,</span><span class="n">DDS</span><span class="o">.</span><span class="n">Pumping</span><span class="o">.</span><span class="n">on</span><span class="p">))</span><span class="o">.</span><span class="n">ttl</span><span class="p">[</span><span class="mi">1</span><span class="p">]([</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">seq</span> <span class="o">=</span> <span class="n">Seq</span><span class="p">(</span><span class="n">Wave</span><span class="p">)</span><span class="o">.</span><span class="n">ddstest</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">change_amp</span><span class="p">(</span><span class="n">val</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">val</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> <span class="c1"># reset 变量回到原点</span>
+        <span class="n">Set</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">f</span><span class="p">,</span><span class="kc">None</span><span class="p">)</span>
+        <span class="n">Set</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">a</span><span class="p">,</span><span class="kc">None</span><span class="p">)</span>
+        <span class="k">return</span>
+    <span class="n">Set</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">f</span><span class="p">,</span><span class="o">-</span><span class="mi">30</span><span class="o">+</span><span class="n">val</span><span class="p">)</span>
+    <span class="n">Set</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">a</span><span class="p">,</span><span class="n">amp</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">val</span><span class="p">)])</span>
+    <span class="k">return</span> <span class="n">val</span>
+
+<span class="n">sequencer</span><span class="o">.</span><span class="n">scan</span><span class="p">(</span><span class="n">seq</span><span class="p">,</span><span class="n">change_amp</span><span class="p">,(</span><span class="mi">0</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">repeats</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">plt</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>第二种方法
+<div class="highlight"><pre><span></span><code><span class="n">amp</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.01</span><span class="p">,</span><span class="mf">0.02</span><span class="p">,</span><span class="mf">0.05</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+   <span class="n">DDS</span><span class="o">.</span><span class="n">Cooling</span><span class="o">.</span><span class="n">on</span><span class="o">.</span><span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="p">](</span><span class="o">-</span><span class="mi">30</span><span class="o">+</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">](</span><span class="n">amp</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">.</span><span class="n">f</span><span class="p">[</span><span class="mi">2</span><span class="p">](</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">](</span><span class="mi">0</span><span class="p">)</span>  <span class="c1">#614</span>
+   <span class="nb">print</span><span class="p">(</span><span class="n">Exp</span><span class="o">.</span><span class="n">Run</span><span class="p">(</span><span class="n">Seq</span><span class="p">(</span><span class="n">Wave</span><span class="p">)</span><span class="o">.</span><span class="n">ddstest</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span><span class="mi">500</span><span class="p">),</span><span class="n">repeats</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
+</code></pre></div></p>
+</li>
+</ul>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="最后更新">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年7月24日 02:24:50 UTC">2025年7月24日</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="创建日期">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年7月24日 02:24:50 UTC">2025年7月24日</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs.sticky", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "search.share", "header.autohide"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+    
+  </body>
+</html>
