@@ -3,7 +3,7 @@ site_description: RTMQ README for TIQC
 site_author: xiaoshe
 site_url: https://xiaoshecode.github.io/rtmq/
 repo_url: https://github.com/xiaoshecode/rtmq.git
-repo_name: TIQC/RTMQReadme
+repo_name: xiaoshecode/rtmq
 nav:
     - Home: index.md
     - Install: 
@@ -50,7 +50,7 @@ theme:
   icon:
     repo: fontawesome/brands/git-alt  #存储库图标
 
-edit_uri: edit/master/docs/
+edit_uri: edit/main/docs/
   
 
 markdown_extensions:
@@ -62,6 +62,7 @@ markdown_extensions:
     - attr_list
 
 plugins:
+  - search
   - git-revision-date #每页底部显示文档最后更新日期，安装 pip install mkdocs-git-revision-date-plugin
   - git-revision-date-localized:  #每个页面底部添加本地化更新和创建日期，安装pip install mkdocs-git-revision-date-localized-plugin
       type: date  #日期格式，有效值为date、datetime、iso_date、iso_datetimetimeago
